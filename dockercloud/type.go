@@ -1,9 +1,5 @@
 package dockercloud
 
-import (
-	"encoding/json"
-)
-
 type ActionListResponse struct {
 	Meta    Meta     `json:"meta"`
 	Objects []Action `json:"objects"`

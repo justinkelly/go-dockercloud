@@ -65,7 +65,7 @@ func GetService(uuid string) (Service, error) {
 
 	request := "GET"
 	//Empty Body Request
-	body := []byte(`{}`)
+	body := "{}"
 	var response Service
 
 	data, err := DockerCloudCall(url, request, body)

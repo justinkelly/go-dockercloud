@@ -53,7 +53,7 @@ Loop:
 
 }
 
-func GetService(uuid string) (Service, error) {
+func GetService(uuid string) (ServiceReturn, error) {
 
 	url := ""
 	if string(uuid[0]) == "/" {
@@ -65,7 +65,7 @@ func GetService(uuid string) (Service, error) {
 	request := "GET"
 	//Empty Body Request
 	body := []byte(`{}`)
-	var response Service
+	var response ServiceReturn
 
 	data, err := DockerCloudCall(url, request, body)
 	if err != nil {

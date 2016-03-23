@@ -398,6 +398,48 @@ type Service struct {
 	Synchronized           bool                `json:"synchronized"`
 	Tags                   []ServiceTag        `json:"tags"`
 	Target_num_containers  int                 `json:"target_num_containers"`
+	Uuid                   string              `json:"uuid"`
+	Working_dir            string              `json:"working_dir"`
+}
+
+type ServiceReturn struct {
+	Autodestroy            string              `json:"autodestroy"`
+	Autoredeploy           bool                `json:"autoredeploy"`
+	Autorestart            string              `json:"autorestart"`
+	Bindings               []ServiceBinding    `json:"bindings"`
+	Container_envvars      []ContainerEnvvar   `json:"container_envvars"`
+	Container_ports        []ContainerPortInfo `json:"container_ports"`
+	Containers             []string            `json:"containers"`
+	Cpu_shares             int                 `json:"cpu_shares"`
+	Current_num_containers int                 `json:"current_num_containers"`
+	Deployed_datetime      string              `json:"deployed_datetime"`
+	Deployment_strategy    string              `json:"deployment_strategy"`
+	Destroyed_datetime     string              `json:"destroyed_datetime"`
+	Entrypoint             string              `json:"entrypoint"`
+	Image_name             string              `json:"image_name"`
+	Image_tag              string              `json:"image_tag"`
+	Link_variables         map[string]string   `json:"link_variables"`
+	Linked_from_service    []ServiceLinkInfo   `json:"linked_from_service"`
+	Linked_to_service      []ServiceLinkInfo   `json:"linked_to_service"`
+	Memory                 int                 `json:"memory"`
+	Name                   string              `json:"name"`
+	Net                    string              `json:"net"`
+	Pid                    string              `json:"pid"`
+	Privileged             bool                `json:"privileged"`
+	Public_dns             string              `json:"public_dns"`
+	Resource_uri           string              `json:"resource_uri"`
+	Roles                  []string            `json:"roles"`
+	Run_command            string              `json:"run_command"`
+	Running_num_containers int                 `json:"running_num_containers"`
+	Sequential_deployment  bool                `json:"sequential_deployment"`
+	Stack                  string              `json:"stack"`
+	Started_datetime       string              `json:"started_datetime"`
+	State                  string              `json:"state"`
+	Stopped_datetime       string              `json:"stopped_datetime"`
+	Stopped_num_containers int                 `json:"stopped_num_containers"`
+	Synchronized           bool                `json:"synchronized"`
+	Tags                   []ServiceTag        `json:"tags"`
+	Target_num_containers  int                 `json:"target_num_containers"`
 	Uuid                   []string              `json:"uuid"`
 	Working_dir            string              `json:"working_dir"`
 }

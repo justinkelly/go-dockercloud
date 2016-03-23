@@ -440,7 +440,7 @@ type ServiceReturn struct {
 	Synchronized           bool                `json:"synchronized"`
 	Tags                   []ServiceTag        `json:"tags"`
 	Target_num_containers  int                 `json:"target_num_containers"`
-	Uuid                   []string            `json:"uuid,Number"`
+	Uuid                   json.Number         `json:"uuid,Number"`
 	Working_dir            string              `json:"working_dir"`
 }
 

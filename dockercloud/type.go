@@ -398,7 +398,7 @@ type Service struct {
 	Synchronized           bool                `json:"synchronized"`
 	Tags                   []ServiceTag        `json:"tags"`
 	Target_num_containers  int                 `json:"target_num_containers"`
-	Uuid                   string              `json:"uuid"`
+	Uuid                   []string              `json:"uuid"`
 	Working_dir            string              `json:"working_dir"`
 }
 

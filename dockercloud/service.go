@@ -53,7 +53,7 @@ Loop:
 
 }
 
-func GetService(uuid json.Number) (ServiceReturn, error) {
+func GetService(uuid json.String) (ServiceReturn, error) {
 
 	url := ""
 	if string(uuid[0]) == "/" {

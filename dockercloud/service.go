@@ -74,8 +74,7 @@ func GetService(uuid string) (Service, error) {
 
    err = json.NewDecoder(strings.NewReader(data)).Decode(&response)
     if err != nil {
-        fmt.Println(err)
-        return
+        return response, err
     }
   
    return response, nil

@@ -53,7 +53,7 @@ Loop:
 
 }
 
-func GetService(uuid json.String) (ServiceReturn, error) {
+func GetService(uuid json.String) (Service, error) {
 
 	url := ""
 	if string(uuid[0]) == "/" {
@@ -65,19 +65,20 @@ func GetService(uuid json.String) (ServiceReturn, error) {
 	request := "GET"
 	//Empty Body Request
 	body := []byte(`{}`)
-	var response ServiceReturn
+	var response Service
 
 	data, err := DockerCloudCall(url, request, body)
 	if err != nil {
 		return response, err
 	}
 
-	err = json.Unmarshal(data, &response)
-	if err != nil {
-		return response, err
-	}
-
-	return response, nil
+   err := json.NewDecoder(strings.NewReader(data)).Decode(&response)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+  
+   return response, nil
 
 }
 
